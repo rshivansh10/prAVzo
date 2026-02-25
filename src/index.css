@@ -1,0 +1,315 @@
+/* Core color tokens for a black, neon-green, gold-glow visual direction */
+:root {
+  --bg: #050505;
+  --panel: #0d0d0d;
+  --text: #e9f7e9;
+  --green: #43ff88;
+  --green-soft: #25b85d;
+  --gold: #f7c948;
+}
+
+/* Global reset */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html,
+body,
+#root {
+  min-height: 100%;
+}
+
+body {
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  background: radial-gradient(circle at 20% 20%, #121212 0%, var(--bg) 45%), var(--bg);
+  color: var(--text);
+}
+
+/* Single-page layout wrapper */
+.site {
+  position: relative;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1.25rem 2rem;
+  isolation: isolate;
+}
+
+/* Very subtle neon rails from top corners to lower-center */
+.site::before,
+.site::after {
+  content: "";
+  position: fixed;
+  top: 0;
+  height: 100vh;
+  width: 2px;
+  z-index: -1;
+  pointer-events: none;
+  opacity: 0.16;
+  background: linear-gradient(to bottom, rgba(67, 255, 136, 0.9), rgba(67, 255, 136, 0.28), rgba(67, 255, 136, 0));
+  box-shadow: 0 0 16px rgba(67, 255, 136, 0.65), 0 0 28px rgba(247, 201, 72, 0.32);
+}
+
+.site::before {
+  left: 5vw;
+  transform-origin: top left;
+  transform: rotate(18deg);
+}
+
+.site::after {
+  right: 5vw;
+  transform-origin: top right;
+  transform: rotate(-18deg);
+}
+
+/* Soft gold ambient glow overlay */
+.ambient-glow {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  background:
+    radial-gradient(circle at 85% 10%, rgba(247, 201, 72, 0.18), transparent 35%),
+    radial-gradient(circle at 10% 80%, rgba(67, 255, 136, 0.14), transparent 35%);
+  z-index: -1;
+}
+
+/* Header with compact nav */
+.topbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 0;
+  border: 1px solid var(--green-soft);
+  border-radius: 0 0 14px 14px;
+  padding: 0.9rem 1rem;
+  background: rgba(10, 10, 10, 0.92);
+  box-shadow: 0 0 20px rgba(67, 255, 136, 0.12), 0 0 26px rgba(247, 201, 72, 0.1);
+  position: sticky;
+  top: 0;
+  z-index: 20;
+  backdrop-filter: blur(8px);
+  overflow: hidden;
+}
+
+.brand {
+  color: var(--green);
+  text-decoration: none;
+  font-size: 1.4rem;
+  font-weight: 800;
+  letter-spacing: 0.04em;
+  text-shadow: 0 0 12px rgba(67, 255, 136, 0.35);
+}
+
+.nav-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.nav-links a {
+  color: var(--text);
+  text-decoration: none;
+  font-weight: 600;
+  padding: 0.35rem 0.6rem;
+  border: 1px solid transparent;
+  border-radius: 10px;
+  transition: 0.2s ease;
+}
+
+.nav-links a:hover {
+  border-color: var(--green);
+  color: var(--green);
+  text-shadow: 0 0 10px rgba(67, 255, 136, 0.3);
+}
+
+/* Animated scooter rider that crosses the header every 3 seconds */
+.scooter-track {
+  position: absolute;
+  left: 0.5rem;
+  right: 0.5rem;
+  bottom: 0.15rem;
+  height: 32px;
+  pointer-events: none;
+}
+
+.scooter-rider {
+  width: 72px;
+  height: 32px;
+  position: absolute;
+  left: -84px;
+  top: 0;
+  fill: none;
+  stroke: var(--green);
+  stroke-width: 3;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  filter: drop-shadow(0 0 4px rgba(67, 255, 136, 0.7)) drop-shadow(0 0 7px rgba(247, 201, 72, 0.35));
+  animation: ride-across 3s linear infinite;
+}
+
+@keyframes ride-across {
+  0% {
+    left: -84px;
+  }
+  100% {
+    left: calc(100% + 84px);
+  }
+}
+
+/* Section base style */
+.section {
+  padding: 4rem 0;
+  margin: 0;
+  background: transparent;
+  border: 0;
+  box-shadow: none;
+}
+
+.section + .section {
+  border-top: 1px solid rgba(67, 255, 136, 0.26);
+}
+
+/* Hero two-column section */
+.hero {
+  display: grid;
+  grid-template-columns: 1.25fr 1fr;
+  gap: 2rem;
+  align-items: center;
+  min-height: 78vh;
+}
+
+.hero-copy h1 {
+  font-size: clamp(1.9rem, 3.4vw, 3.4rem);
+  line-height: 1.06;
+  margin-bottom: 0.9rem;
+  color: #d9ffe8;
+  text-shadow: 0 0 18px rgba(247, 201, 72, 0.12);
+}
+
+.hero-copy p {
+  color: #d8f1da;
+  line-height: 1.6;
+  margin-bottom: 0.9rem;
+}
+
+.eyebrow {
+  display: inline-block;
+  border: 1px solid var(--green);
+  border-radius: 999px;
+  padding: 0.35rem 0.75rem;
+  font-size: 0.8rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  margin-bottom: 0.9rem;
+  color: var(--green);
+}
+
+/* Shared call-to-action button */
+.cta {
+  display: inline-block;
+  text-decoration: none;
+  color: #121212;
+  background: linear-gradient(120deg, var(--green), #84ffb2);
+  font-weight: 700;
+  border-radius: 10px;
+  padding: 0.65rem 1rem;
+  border: 1px solid var(--green);
+  box-shadow: 0 0 14px rgba(67, 255, 136, 0.35), 0 0 20px rgba(247, 201, 72, 0.2);
+}
+
+.review-cta {
+  margin-top: 40px;
+}
+
+/* Logo panel styling */
+.hero-logo-wrap {
+  padding: 0.5rem;
+  text-align: center;
+}
+
+.logo-mask {
+  width: min(320px, 100%);
+  aspect-ratio: 1 / 1;
+  border-radius: 999px;
+  overflow: hidden;
+  margin: 0 auto;
+}
+
+.hero-logo {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transform: scale(1.08);
+  transform-origin: center;
+  border: 2px solid var(--green);
+  box-shadow: 0 0 30px rgba(67, 255, 136, 0.28), 0 0 24px rgba(247, 201, 72, 0.2);
+}
+
+.hero-logo-wrap figcaption {
+  margin-top: 0.8rem;
+  color: #bcf8cb;
+  line-height: 1.5;
+}
+
+/* About/Contact text spacing */
+.block p,
+.contact p {
+  line-height: 1.7;
+  margin-top: 0.55rem;
+}
+
+.section h2 {
+  color: var(--green);
+  margin-bottom: 0.55rem;
+  text-shadow: 0 0 10px rgba(67, 255, 136, 0.25);
+}
+
+/* Review cards grid */
+.cards {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 1rem;
+}
+
+.card {
+  border: 1px solid var(--green-soft);
+  border-radius: 14px;
+  padding: 1rem;
+  background: rgba(14, 14, 14, 0.62);
+  box-shadow: 0 0 12px rgba(67, 255, 136, 0.08);
+}
+
+.card p {
+  line-height: 1.55;
+  margin-bottom: 0.8rem;
+}
+
+.card span {
+  color: var(--gold);
+  font-weight: 700;
+  text-shadow: 0 0 8px rgba(247, 201, 72, 0.25);
+}
+
+/* Mobile-first responsiveness */
+@media (max-width: 900px) {
+  .hero {
+    grid-template-columns: 1fr;
+    min-height: auto;
+    padding-top: 1.5rem;
+  }
+
+  .cards {
+    grid-template-columns: 1fr;
+  }
+
+  .topbar {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .scooter-track {
+    bottom: 0.2rem;
+  }
+}
