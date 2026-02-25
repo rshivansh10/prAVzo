@@ -1,16 +1,35 @@
-# React + Vite
+# <p align="center"><img src="https://readme-typing-svg.herokuapp.com?font=Fira+Code&pause=1000&color=27FF8E&center=true&vCenter=true&width=500&lines=Hi+👋,+I'm+Shivansh+Rai;Cloud+Administrator;IT+Infrastructure+Engineer;SOC+Analyst+Enthusiast" alt="Typing SVG" /></p>
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+<p align="center">
+  <b> Cloud | Infrastructure | Security | Automation </b>
+</p>
 
-Currently, two official plugins are available:
+---
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## 🛡️ Professional Focus
+I specialize in managing and securing enterprise-level **IT Infrastructure** with a heavy focus on **Microsoft Azure**. My approach combines proactive **Cloud Administration** with a **SOC-oriented** mindset to ensure system resilience and security.
 
-## React Compiler
+### 🛠️ Core Competencies
+* **Cloud Platforms**: Microsoft Azure (Entra ID), Azure AD, and GCP Administration.
+* **IT Infrastructure**: Managing Active Directory, Microsoft Intune (MDM), and Exchange Online.
+* **Security Operations (SOC)**: Proficient in Microsoft Defender, SIEM concepts, and security protocols.
+* **System Ops**: Linux Administration (Debian/Ubuntu), Shell Scripting, and Windows Server management.
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+---
 
-## Expanding the ESLint configuration
+## 🚀 Impactful Projects
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+### 🔐 [Full-Scale Intune Integration](https://github.com/YOUR-USERNAME/repo-name)
+Managed the end-to-end deployment of Microsoft Intune MDM for an entire organization, ensuring 100% device compliance and security.
+
+### ☁️ [Azure Cloud Architecture](https://github.com/YOUR-USERNAME/repo-name)
+Implemented and optimized cloud environments using Entra ID and Active Directory to streamline identity management.
+
+### 🧪 [Diagnostic Machine Learning Model](https://github.com/YOUR-USERNAME/repo-name)
+Developed a tumor classification system using SVM, Random Forest, and KNN to demonstrate analytical depth in data-driven environments.
+
+---
+
+## 📫 Connect with Me
+- **LinkedIn**: [linkedin.com/in/yourprofile](https://www.linkedin.com/in/shivansh-rai-7200a2248/)
+- **Portfolio**: [your-portfolio-link.com](https://rshivansh10portfolio.netlify.app/)
